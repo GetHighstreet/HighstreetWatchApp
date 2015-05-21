@@ -1,0 +1,8 @@
+{
+    "session": "WatchKitAppExample_WatchKit_Extension.ExampleDataParentAppSession",
+    "theme": {
+        "productBackgroundColor": "#FFFFFF",
+        "tintColor1": "#619BD6",
+        "tintColor2": "#FF6500"
+    }
+}

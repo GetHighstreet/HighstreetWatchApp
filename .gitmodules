@@ -1,0 +1,12 @@
+[submodule "Carthage/Checkouts/Shared"]
+	path = Carthage/Checkouts/Shared
+	url = /Users/Thomas/Projects/Highstreet/Shared
+[submodule "Carthage/Checkouts/WatchKitCore"]
+	path = Carthage/Checkouts/WatchKitCore
+	url = /Users/Thomas/Projects/Highstreet/WatchKitCore
+[submodule "Carthage/Checkouts/BrightFutures"]
+	path = Carthage/Checkouts/BrightFutures
+	url = https://github.com/thomvis/BrightFutures.git
+[submodule "Carthage/Checkouts/SwiftyJSON"]
+	path = Carthage/Checkouts/SwiftyJSON
+	url = https://github.com/SwiftyJSON/SwiftyJSON.git

@@ -1,0 +1,4 @@
+github "thomvis/BrightFutures" "v1.0.1"
+git "/Users/Thomas/Projects/Highstreet/Shared" "561d0178890cde21901a6a52bf80377bc391df7b"
+github "SwiftyJSON/SwiftyJSON" "2.2.0"
+git "/Users/Thomas/Projects/Highstreet/WatchKitCore" "04aa92d35df45cf64a4200e84184f56261e88f7b"
