@@ -1,3 +1,4 @@
+# Highstreet WatchKit App
 This repository contains an example Highstreet WatchKit app. This app is very similar to the one clients of the Highstreet platform get, except that in this case, the app loads dummy data. Highstreet platform clients also get a universal iOS app, but since that code is not open source, it is not part of this example project.
 
 More information is available in this blog post where we announced that we'd open source the Highstreet WatchKit app: INSERT LINK HERE.
