@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:WatchKitAppExample.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/WatchKitCore/WatchKitExtensionCore.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/BrightFutures/BrightFutures.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/Shared/Shared.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/Result/Result.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/Result/Carthage/Checkouts/Box/Box.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/SwiftyJSON/SwiftyJSON.xcodeproj">
+   </FileRef>
+</Workspace>
