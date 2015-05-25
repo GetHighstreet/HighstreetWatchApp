@@ -3,7 +3,7 @@
 	url = /Users/Thomas/Projects/Highstreet/Shared
 [submodule "Carthage/Checkouts/WatchKitCore"]
 	path = Carthage/Checkouts/WatchKitCore
-	url = /Users/Thomas/Projects/Highstreet/WatchKitCore
+	url = https://github.com/GetHighstreet/WatchKitCore.git
 [submodule "Carthage/Checkouts/BrightFutures"]
 	path = Carthage/Checkouts/BrightFutures
 	url = https://github.com/thomvis/BrightFutures.git

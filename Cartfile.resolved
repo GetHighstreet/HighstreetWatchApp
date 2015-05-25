@@ -1,6 +1,6 @@
 github "robrix/Box" "1.2.2"
-git "/Users/Thomas/Projects/Highstreet/Shared" "561d0178890cde21901a6a52bf80377bc391df7b"
+github "GetHighstreet/Shared" "v2.5.3"
 github "SwiftyJSON/SwiftyJSON" "2.2.0"
 github "antitypical/Result" "0.4.3"
 github "thomvis/BrightFutures" "9d1eabee1e5703c1e4581f90dc20a5e269f361a8"
-git "/Users/Thomas/Projects/Highstreet/WatchKitCore" "069d053156b883f9c1ae2e81aa4ada64e65f7197"
+github "GetHighstreet/WatchKitCore" "v2.5.3"
