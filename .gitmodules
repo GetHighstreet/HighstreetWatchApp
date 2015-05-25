@@ -1,6 +1,6 @@
 [submodule "Carthage/Checkouts/Shared"]
 	path = Carthage/Checkouts/Shared
-	url = /Users/Thomas/Projects/Highstreet/Shared
+	url = https://github.com/GetHighstreet/Shared.git
 [submodule "Carthage/Checkouts/WatchKitCore"]
 	path = Carthage/Checkouts/WatchKitCore
 	url = https://github.com/GetHighstreet/WatchKitCore.git
