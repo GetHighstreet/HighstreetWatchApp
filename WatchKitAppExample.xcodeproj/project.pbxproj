@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E902D8C01B126DC000B2B755 /* WatchKitExtensionCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E902D8BF1B126DC000B2B755 /* WatchKitExtensionCore.framework */; };
+		E902D8C21B13863B00B2B755 /* WatchKitExtensionCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E902D8C11B13863B00B2B755 /* WatchKitExtensionCore.framework */; };
 		E96D6FEF1AF3A9EF00E18FF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D6FEE1AF3A9EF00E18FF2 /* AppDelegate.swift */; };
 		E96D6FF11AF3A9EF00E18FF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D6FF01AF3A9EF00E18FF2 /* ViewController.swift */; };
 		E96D6FF41AF3A9EF00E18FF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96D6FF21AF3A9EF00E18FF2 /* Main.storyboard */; };
@@ -55,7 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E902D8BF1B126DC000B2B755 /* WatchKitExtensionCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKitExtensionCore.framework; path = "Carthage/Checkouts/WatchKitCore/build/Debug-iphoneos/WatchKitExtensionCore.framework"; sourceTree = "<group>"; };
+		E902D8C11B13863B00B2B755 /* WatchKitExtensionCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKitExtensionCore.framework; path = "Carthage/Checkouts/WatchKitCore/build/Debug-iphoneos/WatchKitExtensionCore.framework"; sourceTree = "<group>"; };
 		E96D6FE91AF3A9EF00E18FF2 /* WatchKitAppExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchKitAppExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96D6FED1AF3A9EF00E18FF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E96D6FEE1AF3A9EF00E18FF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E902D8C01B126DC000B2B755 /* WatchKitExtensionCore.framework in Frameworks */,
+				E902D8C21B13863B00B2B755 /* WatchKitExtensionCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,7 +178,7 @@
 		E96D70321AF3AEC700E18FF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E902D8BF1B126DC000B2B755 /* WatchKitExtensionCore.framework */,
+				E902D8C11B13863B00B2B755 /* WatchKitExtensionCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -543,10 +543,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/WatchKitCore/build/Debug-iphoneos",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -563,10 +559,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/WatchKitCore/build/Debug-iphoneos",
-				);
 				INFOPLIST_FILE = "WatchKitAppExample WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
