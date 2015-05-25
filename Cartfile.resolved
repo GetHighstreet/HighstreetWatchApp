@@ -1,4 +1,6 @@
-github "thomvis/BrightFutures" "v1.0.1"
+github "robrix/Box" "1.2.2"
 git "/Users/Thomas/Projects/Highstreet/Shared" "561d0178890cde21901a6a52bf80377bc391df7b"
 github "SwiftyJSON/SwiftyJSON" "2.2.0"
-git "/Users/Thomas/Projects/Highstreet/WatchKitCore" "04aa92d35df45cf64a4200e84184f56261e88f7b"
+github "antitypical/Result" "0.4.3"
+github "thomvis/BrightFutures" "9d1eabee1e5703c1e4581f90dc20a5e269f361a8"
+git "/Users/Thomas/Projects/Highstreet/WatchKitCore" "069d053156b883f9c1ae2e81aa4ada64e65f7197"

@@ -16,11 +16,11 @@ class ExampleDataParentAppSession: NSObject, ParentAppSession {
     
     }
     
-    func execute<R : ParentAppRequest>(request: R, cache: ResponseCache?) -> Future<R.ResponseType> {
+    func execute<R : ParentAppRequest>(request: R, cache: ResponseCache?) -> Future<R.ResponseType, Error> {
         return execute(request)
     }
     
-    func execute<R : ParentAppRequest>(request: R) -> Future<R.ResponseType> {
+    func execute<R : ParentAppRequest>(request: R) -> Future<R.ResponseType, Error> {
         
         if let homePromotionsRequest = request as? HomePromotionsListRequest {
             return Future.succeeded(promotions as! R.ResponseType)
@@ -59,26 +59,26 @@ class ExampleDataParentAppSession: NSObject, ParentAppSession {
 }
 
 let promotions = [
-    HomePromotion(id: 25, categoryId: 68, image: Image.RemoteImage(url: "http://cms.highstreet.imgix.net/negenstraatjes/promotions/wawasEJo2EwzWpmBz5N-5A@2x.jpg?rect=341,310,1365,1427&w=308&h=322")),
-    HomePromotion(id: 65, categoryId: 1213, image: Image.RemoteImage(url: "http://cms.highstreet.imgix.net/negenstraatjes/promotions/SOdsvNoeGtXtGkpmf8nNeg@2x.jpg?rect=341,310,1365,1427&w=308&h=322")),
-    HomePromotion(id: 27, categoryId: 365, image: Image.RemoteImage(url: "http://cms.highstreet.imgix.net/negenstraatjes/promotions/3BG2dE6DpHjv2b9O45S2bA@2x.jpg?rect=341,310,1365,1427&w=308&h=322")),
-    HomePromotion(id: 66, categoryId: 69, image: Image.RemoteImage(url: "http://cms.highstreet.imgix.net/negenstraatjes/promotions/ClRJlRm8nq4bsnx9yimIbw@2x.jpg?rect=341,310,1365,1427&w=308&h=322")),
-    HomePromotion(id: 29, categoryId: 71, image: Image.RemoteImage(url: "http://cms.highstreet.imgix.net/negenstraatjes/promotions/VdBZDLpqJ51qNIeJlSxCHA@2x.jpg?rect=341,310,1365,1427&w=308&h=322")),
+    HomePromotion(id: 25, categoryId: 68, image: Image.RemoteImage(url: "http://i.imgur.com/xGBk3m9.jpg")),
+    HomePromotion(id: 65, categoryId: 1213, image: Image.RemoteImage(url: "http://i.imgur.com/2cKWvU8.jpg")),
+    HomePromotion(id: 27, categoryId: 365, image: Image.RemoteImage(url: "http://i.imgur.com/zO1GHtB.jpg")),
+    HomePromotion(id: 66, categoryId: 69, image: Image.RemoteImage(url: "http://i.imgur.com/zO1GHtB.jpg")),
+    HomePromotion(id: 29, categoryId: 71, image: Image.RemoteImage(url: "http://i.imgur.com/5Cyn66c.jpg")),
 ]
 
 let products = [
-    Product(id: 60689, name: "Tanktop Aleja", secondaryAttribute: "SELECTED FEMME", price: "€ 39,95", image: Image.RemoteImage(url: "http://9straatjes.api.highstreetapp.com/hs-api/1.5/images/media/catalog/product/s/f/sfaleja_white_2_.jpg?size=259")),
-    Product(id: 60059, name: "Layla Dress", secondaryAttribute: "MINUS", price: "€ 119,99", image: Image.RemoteImage(url: "http://9straatjes.api.highstreetapp.com/hs-api/1.5/images/media/catalog/product/m/i/mi1114_-_100_black_-_main.jpg?size=259")),
-    Product(id: 60053, name: "Agam Dress", secondaryAttribute: "MINUS", price: "€ 119,99", image: Image.RemoteImage(url: "http://9straatjes.api.highstreetapp.com/hs-api/1.5/images/media/catalog/product/m/i/mi1046_-_532_mood_indigo_-_main.jpg?size=259")),
-    Product(id: 60020, name: "Top Dion White", secondaryAttribute: "READY TO FISH", price: "€ 159,00", image: Image.RemoteImage(url: "http://9straatjes.api.highstreetapp.com/hs-api/1.5/images/media/catalog/product/d/i/dion_white_90.jpg?size=259")),
-    Product(id: 60019, name: "Afreem Dress", secondaryAttribute: "MINUS", price: "€ 119,99", image: Image.RemoteImage(url: "http://9straatjes.api.highstreetapp.com/hs-api/1.5/images/media/catalog/product/m/i/mi1008_-_9014_liquid_print_-_main.jpg?size=259")),
-    Product(id: 60010, name: "Dress Don Black", secondaryAttribute: "READY TO FISH", price: "€ 119,99", image: Image.RemoteImage(url: "http://9straatjes.api.highstreetapp.com/hs-api/1.5/images/media/catalog/product/d/o/don-90_black_ss15.jpg?size=259")),
-    Product(id: 60004, name: "Dress Don White", secondaryAttribute: "READY TO FISH", price: "€ 119,99", image: Image.RemoteImage(url: "http://9straatjes.api.highstreetapp.com/hs-api/1.5/images/media/catalog/product/d/e/devon-89_black_ss15_1.jpg?size=259")),
-    Product(id: 59992, name: "Jumpsuit Devon Orange", secondaryAttribute: "READY TO FISH", price: "€ 219,00", image: Image.RemoteImage(url: "http://9straatjes.api.highstreetapp.com/hs-api/1.5/images/media/catalog/product/d/e/devon_orange_89.jpg?size=259")),
-    Product(id: 59987, name: "Kaftan nadja", secondaryAttribute: "SELECTED FEMME", price: "€ 59,95", image: Image.RemoteImage(url: "http://9straatjes.api.highstreetapp.com/hs-api/1.5/images/media/catalog/product/b/l/blouse-goed-1.jpg?size=259")),
+    Product(id: 60689, name: "Tanktop Aleja", secondaryAttribute: "SELECTED FEMME", price: "€ 39,95", image: Image.RemoteImage(url: "http://i.imgur.com/S7KqCya.jpg")),
+    Product(id: 60059, name: "Layla Dress", secondaryAttribute: "MINUS", price: "€ 119,99", image: Image.RemoteImage(url: "http://i.imgur.com/XcWJHF7.jpg")),
+    Product(id: 60053, name: "Agam Dress", secondaryAttribute: "MINUS", price: "€ 119,99", image: Image.RemoteImage(url: "http://i.imgur.com/BfPhf2R.jpg")),
+    Product(id: 60020, name: "Top Dion White", secondaryAttribute: "READY TO FISH", price: "€ 159,00", image: Image.RemoteImage(url: "http://i.imgur.com/XFK8G9X.jpg")),
+    Product(id: 60019, name: "Afreem Dress", secondaryAttribute: "MINUS", price: "€ 119,99", image: Image.RemoteImage(url: "http://i.imgur.com/CzkTGFX.jpg")),
+    Product(id: 60010, name: "Dress Don Black", secondaryAttribute: "READY TO FISH", price: "€ 119,99", image: Image.RemoteImage(url: "http://i.imgur.com/PTWgsEA.jpg")),
+    Product(id: 60004, name: "Dress Don White", secondaryAttribute: "READY TO FISH", price: "€ 119,99", image: Image.RemoteImage(url: "http://i.imgur.com/dmaOUmj.jpg")),
+    Product(id: 59992, name: "Jumpsuit Devon Orange", secondaryAttribute: "READY TO FISH", price: "€ 219,00", image: Image.RemoteImage(url: "http://i.imgur.com/NKk9Y3i.jpg")),
+    Product(id: 59987, name: "Kaftan nadja", secondaryAttribute: "SELECTED FEMME", price: "€ 59,95", image: Image.RemoteImage(url: "http://i.imgur.com/IUQf1hQ.jpg")),
     
-    Product(id: 60636, name: "Hey macarena pink", secondaryAttribute: "LE SPECS", price: "€ 59,95", image: Image.RemoteImage(url: "http://9straatjes.api.highstreetapp.com/hs-api/1.5/images/media/catalog/product/b/l/blouse-goed-1.jpg?size=259")),
-    Product(id: 60047, name: "Tasje Salvador", secondaryAttribute: "LEON & HARPER", price: "€ 79,95", image: Image.RemoteImage(url: "http://9straatjes.api.highstreetapp.com/hs-api/1.5/images/media/catalog/product/t/a/tasje-salvador-leon_harper.jpg?size=259"))
+    Product(id: 60636, name: "Alva kimono", secondaryAttribute: "HIPPY CHICK", price: "€ 99,95", image: Image.RemoteImage(url: "http://i.imgur.com/4Xsa6ll.jpg")),
+    Product(id: 60047, name: "Tasje Salvador", secondaryAttribute: "LEON & HARPER", price: "€ 79,95", image: Image.RemoteImage(url: "http://i.imgur.com/v0k75ZL.jpg"))
     
 ]
 
