@@ -22,7 +22,7 @@ Alternatively, you can also run `carthage checkout`.
 # Project Outline
 Highstreet is a platform for mobile shopping apps. At the center of the platform, there is the ‘Highstreet iOS Core’. It contains all business logic and interface code for the iPhone & iPad app. The core is imported in each client project, where it is configured for that specific client. As a result, our customers all get an app that looks and feels like their brand, but the app shared 99% of the code with other Highstreet apps.
 
-With the introduction of Apple Watch, the Highstreet platform now has a second 'core' that is used for the WatchKit Apps: WatchKitCore (this repository). WatchKitCore consists of two parts: the logic that is linked in every WatchKit Extension target (`WatchKitExtensionCore.framework`) and the assets for the WatchKit App target (storyboard, PNG sequences and other assets).
+With the introduction of Apple Watch, the Highstreet platform now has a second 'core' that is used for the WatchKit Apps: WatchKitCore ([GetHighstreet/WatchKitCore](https://github.com/GetHighstreet/WatchKitCore)). WatchKitCore consists of two parts: the logic that is linked in every WatchKit Extension target (`WatchKitExtensionCore.framework`) and the assets for the WatchKit App target (storyboard, PNG sequences and other assets).
 
 WatchKitCore on itself cannot run. It needs to be linked into a client project. This repository contains an example of such a client project. It does not contain the iPhone & iPad app (since those are not yet open source) and the WatchKit Extension therefore loads dummy data instead of requesting data from the 'parent application', but other than that it is very similar to how Highstreet platform client projects work.
 
