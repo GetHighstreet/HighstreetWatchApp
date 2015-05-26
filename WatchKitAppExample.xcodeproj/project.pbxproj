@@ -140,7 +140,6 @@
 		E96D70131AF3AA9B00E18FF2 /* WatchKitAppExample WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				E9735D1B1AF3C5FB00C24E1D /* Dummy Responses */,
 				E96D70181AF3AA9B00E18FF2 /* Images.xcassets */,
 				E96D70141AF3AA9B00E18FF2 /* Supporting Files */,
 				E9735D191AF3C46200C24E1D /* configuration.json */,
@@ -191,13 +190,6 @@
 			);
 			name = Core;
 			path = ../Carthage/Checkouts/WatchKitCore/WatchKitAppCore;
-			sourceTree = "<group>";
-		};
-		E9735D1B1AF3C5FB00C24E1D /* Dummy Responses */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Dummy Responses";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
