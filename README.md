@@ -13,8 +13,7 @@ If you want to run this app for yourself, follow the installation instructions b
 After cloning this repository, the dependencies need to be set-up:
 
 ```
-git submodule init
-git submodule update --recursive
+git submodule update --init --recursive
 ```
 
 Alternatively, you can also run `carthage checkout`.
