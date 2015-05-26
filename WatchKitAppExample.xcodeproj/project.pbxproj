@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E902D8C21B13863B00B2B755 /* WatchKitExtensionCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E902D8C11B13863B00B2B755 /* WatchKitExtensionCore.framework */; };
+		E902D8C71B14858100B2B755 /* ProductNotification.apns in Resources */ = {isa = PBXBuildFile; fileRef = E902D8C61B14858100B2B755 /* ProductNotification.apns */; };
+		E902D8C91B14860700B2B755 /* CategoryNotification.apns in Resources */ = {isa = PBXBuildFile; fileRef = E902D8C81B14860700B2B755 /* CategoryNotification.apns */; };
+		E902D8CB1B1486BE00B2B755 /* PromotionNotification.apns in Resources */ = {isa = PBXBuildFile; fileRef = E902D8CA1B1486BE00B2B755 /* PromotionNotification.apns */; };
 		E96D6FEF1AF3A9EF00E18FF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D6FEE1AF3A9EF00E18FF2 /* AppDelegate.swift */; };
 		E96D6FF11AF3A9EF00E18FF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D6FF01AF3A9EF00E18FF2 /* ViewController.swift */; };
 		E96D6FF41AF3A9EF00E18FF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96D6FF21AF3A9EF00E18FF2 /* Main.storyboard */; };
@@ -56,6 +59,9 @@
 
 /* Begin PBXFileReference section */
 		E902D8C11B13863B00B2B755 /* WatchKitExtensionCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKitExtensionCore.framework; path = "Carthage/Checkouts/WatchKitCore/build/Debug-iphoneos/WatchKitExtensionCore.framework"; sourceTree = "<group>"; };
+		E902D8C61B14858100B2B755 /* ProductNotification.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProductNotification.apns; sourceTree = "<group>"; };
+		E902D8C81B14860700B2B755 /* CategoryNotification.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CategoryNotification.apns; sourceTree = "<group>"; };
+		E902D8CA1B1486BE00B2B755 /* PromotionNotification.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PromotionNotification.apns; sourceTree = "<group>"; };
 		E96D6FE91AF3A9EF00E18FF2 /* WatchKitAppExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchKitAppExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96D6FED1AF3A9EF00E18FF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E96D6FEE1AF3A9EF00E18FF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +101,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E902D8C51B14857200B2B755 /* Notification Payloads */ = {
+			isa = PBXGroup;
+			children = (
+				E902D8C61B14858100B2B755 /* ProductNotification.apns */,
+				E902D8C81B14860700B2B755 /* CategoryNotification.apns */,
+				E902D8CA1B1486BE00B2B755 /* PromotionNotification.apns */,
+			);
+			path = "Notification Payloads";
+			sourceTree = "<group>";
+		};
 		E96D6FE01AF3A9EF00E18FF2 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +156,7 @@
 		E96D70131AF3AA9B00E18FF2 /* WatchKitAppExample WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E902D8C51B14857200B2B755 /* Notification Payloads */,
 				E96D70181AF3AA9B00E18FF2 /* Images.xcassets */,
 				E96D70141AF3AA9B00E18FF2 /* Supporting Files */,
 				E9735D191AF3C46200C24E1D /* configuration.json */,
@@ -302,9 +319,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E902D8C71B14858100B2B755 /* ProductNotification.apns in Resources */,
 				E96D701D1AF3AA9B00E18FF2 /* WatchKitAppExample WatchKit App.app in Resources */,
 				E9735D1A1AF3C46200C24E1D /* configuration.json in Resources */,
 				E96D70191AF3AA9B00E18FF2 /* Images.xcassets in Resources */,
+				E902D8CB1B1486BE00B2B755 /* PromotionNotification.apns in Resources */,
+				E902D8C91B14860700B2B755 /* CategoryNotification.apns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

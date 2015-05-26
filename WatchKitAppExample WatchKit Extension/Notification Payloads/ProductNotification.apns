@@ -1,0 +1,17 @@
+{
+    "aps": {
+        "alert": "Check out this new cool bag!",
+        "category": "product"
+    },
+    
+    "WatchKit Simulator Actions": [
+                                   {
+                                   "title": "Favorite",
+                                   "identifier": "favorite"
+                                   }
+                                   ],
+    
+    "hs": {
+        "d": "xmpl://products/60047"
+    }
+}

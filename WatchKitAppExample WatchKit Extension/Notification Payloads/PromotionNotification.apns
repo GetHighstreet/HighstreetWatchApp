@@ -1,0 +1,10 @@
+{
+    "aps": {
+        "alert": "See you at the beach!",
+        "category": "promotion"
+    },
+    
+    "hs": {
+        "d": "xmpl://home/promotions/65"
+    }
+}

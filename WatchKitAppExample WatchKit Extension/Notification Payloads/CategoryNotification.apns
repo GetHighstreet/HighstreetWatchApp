@@ -1,0 +1,10 @@
+{
+    "aps": {
+        "alert": "Super fresh products for our favorite season!",
+        "category": "category"
+    },
+    
+    "hs": {
+        "d": "xmpl://categories/68"
+    }
+}

@@ -9,7 +9,15 @@
 import Foundation
 import WatchKitExtensionCore
 import BrightFutures
+import Shared
 
+/// This implementation of ParentAppSession constructs the responses for the requests
+/// from dummy data. The implementation of the 'real' session that communicates with the
+/// parent app is more interesting. Search for `_ParentAppSession`. That one however is
+/// not used in this example as it relies on the full iPhone app.
+///
+/// There's a lot of forced unwrapping here and that's pretty at all. This is just to keep
+/// the dummy data part as short as possible (it is not interesting anyway).
 class ExampleDataParentAppSession: NSObject, ParentAppSession {
     
     required override init() {
@@ -60,11 +68,59 @@ class ExampleDataParentAppSession: NSObject, ParentAppSession {
                     description: productDetails[productDetailsRequest.productId]
                 ) as! R.ResponseType
             )
+        } else if let notificationDataRequest = request as? NotificationDataRequest<R.ResponseType> {
+            return executeNotificationDataRequest(notificationDataRequest)
         }
         
         return Future.never()
     }
     
+    func executeNotificationDataRequest<R>(request: NotificationDataRequest<R>) -> Future<R, Error> {
+        if let subjectId = request.deeplink.lastPathComponent.toInt() {
+            switch request.category {
+            case HSPushCategoryProduct:
+                return Future.succeeded(indexedProducts[subjectId].map(favoritize)! as! R)
+            case HSPushCategoryCategory:
+                let products = categoryProducts[subjectId]!.map { indexedProducts[$0]! }.map(favoritize)
+                
+                if let range = intersection(validRange(products), 0..<5) {
+                    return Future.succeeded((products.count, Array(products[range])) as! R)
+                } else {
+                    return Future.succeeded((products.count, [Product]()) as! R)
+                }
+            case HSPushCategoryPromotion:
+                
+                let promotion = indexedPromotions[subjectId]!
+                let products = categoryProducts[promotion.categoryId]!.map { indexedProducts[$0]! }.map(favoritize)
+                let countAndProducts: (Int, [Product])
+                
+                if let range = intersection(validRange(products), 0..<5) {
+                    countAndProducts = (products.count, Array(products[range]))
+                } else {
+                    countAndProducts = (products.count, [Product]())
+                }
+                
+                // we have to split it up like this to prevent a Segmentation Fault in the compiler
+                let result = (promotion, countAndProducts)
+                return Future.succeeded(result as! R)
+            case HSPushCategoryLookbook:
+                fatalError("Lookbook notification not implemented in this example")
+            default:
+                fatalError("Notification with category \(request.category) not implemented in this example")
+            }
+        }
+        return Future.never()
+    }
+    
+}
+
+
+func groupBy<E, K>(source: [E], keyForElement: (E) -> (K)) -> [K:E] {
+    var res = [K:E]()
+    for elem in source {
+        res[keyForElement(elem)] = elem
+    }
+    return res
 }
 
 let promotions = [
@@ -74,6 +130,8 @@ let promotions = [
     HomePromotion(id: 66, categoryId: 69, image: Image.RemoteImage(url: "http://i.imgur.com/zO1GHtB.jpg")),
     HomePromotion(id: 29, categoryId: 71, image: Image.RemoteImage(url: "http://i.imgur.com/5Cyn66c.jpg")),
 ]
+
+let indexedPromotions = groupBy(promotions) { $0.id }
 
 let products = [
     Product(id: 60689, name: "Tanktop Aleja", secondaryAttribute: "SELECTED FEMME", price: "€ 39,95", image: Image.RemoteImage(url: "http://i.imgur.com/S7KqCya.jpg")),
@@ -89,14 +147,6 @@ let products = [
     Product(id: 60636, name: "Alva kimono", secondaryAttribute: "HIPPY CHICK", price: "€ 99,95", image: Image.RemoteImage(url: "http://i.imgur.com/4Xsa6ll.jpg")),
     Product(id: 60047, name: "Tasje Salvador", secondaryAttribute: "LEON & HARPER", price: "€ 79,95", image: Image.RemoteImage(url: "http://i.imgur.com/v0k75ZL.jpg"))
 ]
-
-func groupBy<E, K>(source: [E], keyForElement: (E) -> (K)) -> [K:E] {
-    var res = [K:E]()
-    for elem in source {
-        res[keyForElement(elem)] = elem
-    }
-    return res
-}
 
 let indexedProducts = groupBy(products) { $0.id }
 
