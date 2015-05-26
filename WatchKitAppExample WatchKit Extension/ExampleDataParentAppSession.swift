@@ -51,6 +51,15 @@ class ExampleDataParentAppSession: NSObject, ParentAppSession {
                     favorites.removeAtIndex(index)
                 }
             }
+        } else if let warmUpRequest = request as? WarmUpRequest {
+            return Future.succeeded(NSDate() as! R.ResponseType)
+        } else if let productDetailsRequest = request as? ProductDetailsRequest {
+            return Future.succeeded(
+                ProductDetails(
+                    product: favoritize(indexedProducts[productDetailsRequest.productId]!),
+                    description: productDetails[productDetailsRequest.productId]
+                ) as! R.ResponseType
+            )
         }
         
         return Future.never()
@@ -79,10 +88,9 @@ let products = [
     
     Product(id: 60636, name: "Alva kimono", secondaryAttribute: "HIPPY CHICK", price: "€ 99,95", image: Image.RemoteImage(url: "http://i.imgur.com/4Xsa6ll.jpg")),
     Product(id: 60047, name: "Tasje Salvador", secondaryAttribute: "LEON & HARPER", price: "€ 79,95", image: Image.RemoteImage(url: "http://i.imgur.com/v0k75ZL.jpg"))
-    
 ]
 
-func indexed<E, K>(source: [E], keyForElement: (E) -> (K)) -> [K:E] {
+func groupBy<E, K>(source: [E], keyForElement: (E) -> (K)) -> [K:E] {
     var res = [K:E]()
     for elem in source {
         res[keyForElement(elem)] = elem
